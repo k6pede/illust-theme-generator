@@ -11,6 +11,6 @@ on:
 
 jobs:
   run:
-    runs-on: ubuntu-latesßt
+    runs-on: ubuntu-latest
     steps:
       - run: echo "${{ inputs.greeting}}"
