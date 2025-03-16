@@ -1,0 +1,50 @@
+src/
+  app/                         # Next.js App Router
+    api/                       # API Routes (サーバーサイドエンドポイント)
+      theme/                   # お題関連のAPIエンドポイント
+        route.ts               # お題生成API
+    page.tsx                   # ホームページ
+    layout.tsx                 # アプリレイアウト
+    
+  core/                        # 共通コア機能（フロント/バックエンド共通）
+    domain/                    # ドメインモデル・ビジネスロジック
+      models/                  # データモデル
+        theme.ts               # お題関連のデータ型定義
+      services/                # ドメインサービス
+        theme-generator.ts     # お題生成ロジック
+    
+  features/                    # 機能ごとのモジュール
+    theme-generator/           # お題生成機能
+      components/              # 機能固有のUIコンポーネント
+        ThemeDisplay.tsx       # お題表示コンポーネント
+        ThemeControls.tsx      # お題設定コンポーネント
+      hooks/                   # 機能固有のReact Hooks
+        useThemeGenerator.ts   # お題生成ロジックを扱うフック
+      store/                   # 機能固有の状態管理
+        themeStore.ts          # お題関連の状態管理(Zustand)
+    
+    character/                 # 3Dキャラクター機能
+      components/              # 3Dキャラクター関連コンポーネント
+      hooks/                   # 3Dキャラクター関連フック
+      store/                   # 3Dキャラクター関連状態管理
+    
+    shared/                    # 共有UI関連
+      components/              # 共通UIコンポーネント
+        ui/                    # 基本UIパーツ
+          Button.tsx
+          Card.tsx
+        layout/                # レイアウト関連
+          Header.tsx
+          Footer.tsx
+      hooks/                   # 共通フック
+        useMediaQuery.ts       # レスポンシブ対応用フック
+      utils/                   # ユーティリティ関数
+        random.ts              # ランダム関連のユーティリティ
+  
+  lib/                         # 外部ライブラリの抽象化レイヤー
+    three-js/                  # Three.js関連の抽象化
+    storage/                   # ストレージ関連の抽象化
+  
+  public/                      # 静的ファイル
+    models/                    # 3Dモデル
+    images/                    # 画像リソース
